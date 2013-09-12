@@ -203,24 +203,34 @@
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u83_normal.png");
 }
 
-* html .u86_normal {
+* html .u85_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u86_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u85_normal.png");
 }
 
-* html .u88_normal {
+* html .u87_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u88_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u87_normal.png");
 }
 
-* html .u93_normal {
+* html .u89_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u93_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u89_normal.png");
 }
 
-* html .u95_normal {
+* html .u91_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u95_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u91_normal.png");
+}
+
+* html .u94_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u94_normal.png");
+}
+
+* html .u96_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u96_normal.png");
 }
 
 * html .u98_normal {
@@ -228,28 +238,18 @@
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u98_normal.png");
 }
 
-* html .u100_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u100_normal.png");
-}
-
-* html .u102_line {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u102_line.png");
-}
-
-* html .u103_line {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u103_line.png");
-}
-
 * html .u104_line {
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u104_line.png");
 }
 
-* html .u105_normal {
+* html .u105_line {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u105_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u105_line.png");
+}
+
+* html .u106_line {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="baike_files/u106_line.png");
 }
 
