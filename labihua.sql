@@ -7,6 +7,7 @@ CREATE TABLE admin_user (
   user_realname VARCHAR(100) NULL,
   PRIMARY KEY(user_id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_article (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -26,6 +27,7 @@ CREATE TABLE a_article (
   keyword INT(11) NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_article_crawl (
   id INT NOT NULL AUTO_INCREMENT,
@@ -37,6 +39,7 @@ CREATE TABLE a_article_crawl (
   native_sort VARCHAR(100) NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_article_crawl_attr (
   article_id INT UNSIGNED NOT NULL,
@@ -44,6 +47,7 @@ CREATE TABLE a_article_crawl_attr (
   freq INT(3) NULL,
   source_link VARCHAR(200) NULL
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_ask_article (
   id INT NOT NULL AUTO_INCREMENT,
@@ -53,8 +57,10 @@ CREATE TABLE a_ask_article (
   content TEXT NULL,
   abstract TEXT NULL,
   pv INT NULL,
+  time_line INT NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_ask_keywords (
   id INT NOT NULL AUTO_INCREMENT,
@@ -62,16 +68,19 @@ CREATE TABLE a_ask_keywords (
   section INT NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_comment (
   id INT NOT NULL AUTO_INCREMENT,
-  author_id INT NULL,
+  user_id INT NULL,
   add_time DATETIME NULL,
-  comment_type TINYINT(2) UNSIGNED NULL,
+  c_status TINYINT(2) UNSIGNED NULL,
   target_id INT NULL,
   content TEXT NULL,
+  reply_num INT NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+)
+TYPE=InnoDB;
 
 CREATE TABLE a_comment_reply (
   id INT NOT NULL AUTO_INCREMENT,
@@ -81,7 +90,8 @@ CREATE TABLE a_comment_reply (
   recommand TINYINT UNSIGNED NULL,
   audit_status TINYINT(4) UNSIGNED NULL,
   PRIMARY KEY(id)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+)
+TYPE=InnoDB;
 
 CREATE TABLE a_img_lib (
   id INT NOT NULL AUTO_INCREMENT,
@@ -94,6 +104,7 @@ CREATE TABLE a_img_lib (
   data_process TINYINT(2) UNSIGNED NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_img_tag_relation (
   id INT NOT NULL AUTO_INCREMENT,
@@ -103,12 +114,15 @@ CREATE TABLE a_img_tag_relation (
   status_2 TINYINT(2) UNSIGNED NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
+
 CREATE TABLE a_keyword (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NULL,
   section INT NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_pregnant_diary (
   id INT NOT NULL AUTO_INCREMENT,
@@ -117,6 +131,7 @@ CREATE TABLE a_pregnant_diary (
   mood_level TINYINT UNSIGNED NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_relation_tag (
   id INT NOT NULL AUTO_INCREMENT,
@@ -126,6 +141,7 @@ CREATE TABLE a_relation_tag (
   status_tag TINYINT(4) UNSIGNED NULL DEFAULT '0',
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_section (
   id INT NOT NULL AUTO_INCREMENT,
@@ -134,6 +150,7 @@ CREATE TABLE a_section (
   pt_depth TINYINT(4) UNSIGNED NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_specpage (
   id INT NOT NULL AUTO_INCREMENT,
@@ -147,19 +164,23 @@ CREATE TABLE a_specpage (
   edit_time DATETIME NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_tag (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NULL,
   weight INT NULL,
+  time_line INT NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_timeline (
   id INT NOT NULL AUTO_INCREMENT,
   time_bucket VARCHAR(100) NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_user (
   user_id INT NOT NULL AUTO_INCREMENT,
@@ -173,6 +194,7 @@ CREATE TABLE a_user (
   user_timeline INT NULL,
   PRIMARY KEY(user_id)
 )
+TYPE=InnoDB;
 
 CREATE TABLE a_wiki (
   id INT NOT NULL AUTO_INCREMENT,
@@ -184,6 +206,7 @@ CREATE TABLE a_wiki (
   href VARCHAR(255) NULL,
   PRIMARY KEY(id, wiki_spell)
 )
+TYPE=InnoDB;
 
 CREATE TABLE crawl_history (
   id INT NOT NULL AUTO_INCREMENT,
@@ -192,5 +215,6 @@ CREATE TABLE crawl_history (
   site_name VARCHAR(45) NULL,
   PRIMARY KEY(id)
 )
+TYPE=InnoDB;
 
 
