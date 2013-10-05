@@ -146,8 +146,6 @@ TYPE=InnoDB;
 CREATE TABLE a_section (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NULL,
-  parent INT NULL,
-  pt_depth TINYINT(4) UNSIGNED NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -187,11 +185,11 @@ CREATE TABLE a_user (
   user_nickname VARCHAR(200) NULL,
   user_passwd VARCHAR(50) NULL,
   user_reg_time DATETIME NULL,
-  user_right INT(11) NULL,
   user_email VARCHAR(255) NULL,
   user_info TEXT NULL,
   user_login_time DATETIME NULL,
   user_timeline INT NULL,
+  section INT NULL,
   PRIMARY KEY(user_id)
 )
 TYPE=InnoDB;
