@@ -9,6 +9,15 @@ CREATE TABLE admin_user (
 )
 TYPE=InnoDB;
 
+CREATE TABLE a_***_tag (
+  id INT NOT NULL AUTO_INCREMENT,
+  target_id INT NULL,
+  tag_id INT NULL,
+  status_tag TINYINT(4) UNSIGNED NULL DEFAULT '0',
+  PRIMARY KEY(id)
+)
+TYPE=InnoDB;
+
 CREATE TABLE a_article (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NULL,
@@ -22,9 +31,7 @@ CREATE TABLE a_article (
   recommend TINYINT(5) UNSIGNED NULL,
   attention INT NULL,
   native_sort VARCHAR(100) NULL,
-  time_line INT(11) NULL,
   section INT(11) NULL,
-  keyword INT(11) NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -53,11 +60,10 @@ CREATE TABLE a_ask_article (
   id INT NOT NULL AUTO_INCREMENT,
   add_time DATETIME NULL,
   author INT NULL,
-  section_type INT NULL,
+  section INT NULL,
   content TEXT NULL,
   abstract TEXT NULL,
   pv INT NULL,
-  time_line INT NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -111,15 +117,7 @@ CREATE TABLE a_img_tag_relation (
   lib_id INT NULL,
   tag_id INT NULL,
   tag_name VARCHAR(100) NULL,
-  status_2 TINYINT(2) UNSIGNED NULL,
-  PRIMARY KEY(id)
-)
-TYPE=InnoDB;
-
-CREATE TABLE a_keyword (
-  id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(100) NULL,
-  section INT NULL,
+  tag_status TINYINT(2) UNSIGNED NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -129,16 +127,6 @@ CREATE TABLE a_pregnant_diary (
   ask_content_id INT NULL,
   author_id INT NULL,
   mood_level TINYINT UNSIGNED NULL,
-  PRIMARY KEY(id)
-)
-TYPE=InnoDB;
-
-CREATE TABLE a_relation_tag (
-  id INT NOT NULL AUTO_INCREMENT,
-  target_type TINYINT(4) UNSIGNED NULL,
-  target_id INT NULL,
-  tag_id INT NULL,
-  status_tag TINYINT(4) UNSIGNED NULL DEFAULT '0',
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -197,7 +185,6 @@ TYPE=InnoDB;
 CREATE TABLE a_wiki (
   id INT NOT NULL AUTO_INCREMENT,
   wiki_spell CHAR(2) NOT NULL,
-  tag_id INT NULL,
   wiki_key VARCHAR(100) NULL,
   wiki_content TEXT NULL,
   wiki_img VARCHAR(255) NULL,
