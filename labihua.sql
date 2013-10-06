@@ -9,15 +9,6 @@ CREATE TABLE admin_user (
 )
 TYPE=InnoDB;
 
-CREATE TABLE a_***_tag (
-  id INT NOT NULL AUTO_INCREMENT,
-  target_id INT NULL,
-  tag_id INT NULL,
-  status_tag TINYINT(4) UNSIGNED NULL DEFAULT '0',
-  PRIMARY KEY(id)
-)
-TYPE=InnoDB;
-
 CREATE TABLE a_article (
   id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NULL,
@@ -56,6 +47,15 @@ CREATE TABLE a_article_crawl_attr (
 )
 TYPE=InnoDB;
 
+CREATE TABLE a_article_tag (
+  id INT NOT NULL AUTO_INCREMENT,
+  target_id INT NULL,
+  tag_id INT NULL,
+  status_tag TINYINT(4) UNSIGNED NULL DEFAULT '0',
+  PRIMARY KEY(id)
+)
+TYPE=InnoDB;
+
 CREATE TABLE a_ask_article (
   id INT NOT NULL AUTO_INCREMENT,
   add_time DATETIME NULL,
@@ -68,13 +68,13 @@ CREATE TABLE a_ask_article (
 )
 TYPE=InnoDB;
 
-CREATE TABLE a_ask_keywords (
+CREATE TABLE a_ask_tag (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(100) NULL,
-  section INT NULL,
+  target_id INT NULL,
+  tag_id INT NULL,
+  status_tag TINYINT(4) UNSIGNED NULL,
   PRIMARY KEY(id)
-)
-TYPE=InnoDB;
+);
 
 CREATE TABLE a_comment (
   id INT NOT NULL AUTO_INCREMENT,
@@ -152,11 +152,19 @@ CREATE TABLE a_specpage (
 )
 TYPE=InnoDB;
 
+CREATE TABLE a_specpage_tag (
+  id INT NOT NULL AUTO_INCREMENT,
+  target_id INT NULL,
+  tag_id INT NULL,
+  status_tag TINYINT(4) UNSIGNED NULL,
+  PRIMARY KEY(id)
+);
+
 CREATE TABLE a_tag (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NULL,
   weight INT NULL,
-  time_line INT NULL,
+  section INT NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
@@ -192,6 +200,14 @@ CREATE TABLE a_wiki (
   PRIMARY KEY(id, wiki_spell)
 )
 TYPE=InnoDB;
+
+CREATE TABLE a_wiki_tag (
+  id INT NOT NULL AUTO_INCREMENT,
+  target_id INT NULL,
+  tag_id INT NULL,
+  status_tag TINYINT(4) UNSIGNED NULL,
+  PRIMARY KEY(id)
+);
 
 CREATE TABLE crawl_history (
   id INT NOT NULL AUTO_INCREMENT,
