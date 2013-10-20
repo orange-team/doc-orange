@@ -64,6 +64,7 @@ CREATE TABLE a_ask_article (
   content TEXT NULL,
   abstract TEXT NULL,
   pv INT NULL,
+  title VARCHAR(200) NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
