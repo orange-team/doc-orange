@@ -140,16 +140,13 @@ CREATE TABLE a_section (
 TYPE=InnoDB;
 
 CREATE TABLE a_specpage (
-  id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NULL,
   cover VARCHAR(100) NULL,
   content TEXT NULL,
   author VARCHAR(45) NULL,
   add_time DATETIME NULL,
   section INT NULL,
-  keyword INT NULL,
-  edit_time DATETIME NULL,
-  PRIMARY KEY(id)
+  edit_time DATETIME NULL
 )
 TYPE=InnoDB;
 
@@ -173,6 +170,7 @@ TYPE=InnoDB;
 CREATE TABLE a_timeline (
   id INT NOT NULL AUTO_INCREMENT,
   time_bucket VARCHAR(100) NULL,
+  section INT NULL,
   PRIMARY KEY(id)
 )
 TYPE=InnoDB;
